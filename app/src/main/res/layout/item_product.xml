@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_marginBottom="5dp"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_product_item"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv_product_name"
+              tools:text="Pen"
+              android:textColor="#000000"
+              android:textStyle="bold"
+              android:textSize="14sp"
+              app:layout_constraintTop_toBottomOf="@+id/iv_product_item"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv_product_price"
+              tools:text="Rs 30"
+              android:layout_marginTop="5dp"
+              android:textColor="#000000"
+              android:textStyle="bold"
+              android:textSize="14sp"
+              app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+    />
+
+    <RatingBar android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/rb_product_rating"
+               app:layout_constraintTop_toBottomOf="@+id/tv_product_price"
+               app:layout_constraintLeft_toLeftOf="parent"
+               app:layout_constraintRight_toRightOf="parent"
+    />
+
+</android.support.constraint.ConstraintLayout>
