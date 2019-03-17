@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.layout_fragment_header.*
 import java.lang.RuntimeException
 import javax.inject.Inject
 
-class AllItemsFragment @Inject constructor(): DaggerBaseFragment<ShoppingCartViewModel>() {
+class AllItemsFragment : DaggerBaseFragment<ShoppingCartViewModel>() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -28,6 +28,11 @@ class AllItemsFragment @Inject constructor(): DaggerBaseFragment<ShoppingCartVie
     lateinit var allItemsAdapter: AllItemsAdapter
     lateinit var showAddItemToCartDialogListener: ShowAddItemToCartDialogListener
 
+    companion object {
+        fun newInstance(): AllItemsFragment {
+            return AllItemsFragment()
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_product_item_list, container, false)

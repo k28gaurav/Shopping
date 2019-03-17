@@ -18,10 +18,6 @@ class ShoppingCartActivity : DaggerBaseActivity<ShoppingCartViewModel>(),Library
 
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    @Inject lateinit var libraryFragment: LibraryFragment
-    @Inject lateinit var cartFragment: ShoppingCartFragment
-    @Inject lateinit var allItemsFragment: AllItemsFragment
-    @Inject lateinit var discountFragment: DiscountFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +28,8 @@ class ShoppingCartActivity : DaggerBaseActivity<ShoppingCartViewModel>(),Library
 
      fun initViews() {
         supportFragmentManager?.beginTransaction()
-            ?.add(fl_library_container.id, libraryFragment, "library")
-            ?.add(fl_cart_container.id, cartFragment, "cart")
+            ?.add(fl_library_container.id, LibraryFragment.newInstance(), "library")
+            ?.add(fl_cart_container.id, ShoppingCartFragment.newInstance(), "cart")
             ?.commit()
     }
 
@@ -41,14 +37,14 @@ class ShoppingCartActivity : DaggerBaseActivity<ShoppingCartViewModel>(),Library
         when(fragmentName) {
             LibraryFragment.NextFrag.ALL_ITEMS -> {
                 supportFragmentManager?.beginTransaction()
-                    ?.replace(fl_library_container.id, allItemsFragment, "allItems")
+                    ?.replace(fl_library_container.id, AllItemsFragment.newInstance(), "allItems")
                     ?.addToBackStack(null)
                     ?.commit()
             }
 
             LibraryFragment.NextFrag.ALL_DISCOUNT -> {
                 supportFragmentManager?.beginTransaction()
-                    ?.replace(fl_library_container.id, discountFragment, "discountItems")
+                    ?.replace(fl_library_container.id, DiscountFragment.newInstance(), "discountItems")
                     ?.addToBackStack(null)
                     ?.commit()
             }

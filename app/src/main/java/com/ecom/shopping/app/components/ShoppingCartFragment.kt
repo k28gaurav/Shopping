@@ -20,7 +20,7 @@ import java.lang.RuntimeException
 import java.text.DecimalFormat
 import javax.inject.Inject
 
-class ShoppingCartFragment @Inject constructor(): DaggerBaseFragment<ShoppingCartViewModel>() {
+class ShoppingCartFragment : DaggerBaseFragment<ShoppingCartViewModel>() {
 
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -30,6 +30,11 @@ class ShoppingCartFragment @Inject constructor(): DaggerBaseFragment<ShoppingCar
     private var subtotal = 0.0f
     private var discount = 0.0f
 
+    companion object {
+        fun newInstance(): ShoppingCartFragment {
+            return ShoppingCartFragment()
+        }
+    }
 
 
     override fun onAttach(context: Context?) {

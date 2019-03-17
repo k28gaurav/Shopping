@@ -18,14 +18,18 @@ import kotlinx.android.synthetic.main.layout_fragment_header.*
 import java.lang.RuntimeException
 import javax.inject.Inject
 
-class DiscountFragment @Inject constructor() : DaggerBaseFragment<ShoppingCartViewModel>() {
+class DiscountFragment  : DaggerBaseFragment<ShoppingCartViewModel>() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-
-
     lateinit var discountItemAdapter: DiscountItemsAdapter
     lateinit var onClickDiscountItem: OnClickDiscountItems
+
+    companion object {
+        fun newInstance(): DiscountFragment {
+            return DiscountFragment()
+        }
+    }
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

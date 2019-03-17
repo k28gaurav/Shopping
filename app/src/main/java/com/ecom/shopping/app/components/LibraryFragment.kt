@@ -12,10 +12,16 @@ import kotlinx.android.synthetic.main.fragment_library.*
 import java.lang.RuntimeException
 import javax.inject.Inject
 
-class LibraryFragment @Inject constructor(): DaggerBaseFragment<ShoppingCartViewModel>() {
+class LibraryFragment : DaggerBaseFragment<ShoppingCartViewModel>() {
 
     enum class NextFrag {
         ALL_DISCOUNT, ALL_ITEMS
+    }
+
+    companion object {
+        fun newInstance(): LibraryFragment {
+            return LibraryFragment()
+        }
     }
 
     private lateinit var changeFragmentListener: ChangeFragmentListener
