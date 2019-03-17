@@ -1,19 +1,19 @@
 package com.ecom.shopping.app.base
 
-import android.arch.lifecycle.ViewModel
-import com.ecom.shopping.app.rx.SchedulerProvider
-import io.reactivex.disposables.CompositeDisposable
+import android.support.v7.widget.RecyclerView
+import android.view.View
+import timber.log.Timber
 
-open class BaseViewModel constructor(val schedulers: SchedulerProvider): ViewModel() {
+abstract class BaseViewHolder<T>(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener{
 
-    private val disposables: CompositeDisposable = CompositeDisposable()
+    var adapterCallback: AdapterItemClick<T>?=null
+    abstract fun setData(data: T)
 
-    protected fun getCompositeDisposable(): CompositeDisposable {
-        return disposables
+    fun setCallbackListener(callback: AdapterItemClick<T>?){
+        adapterCallback = callback
     }
 
-    override fun onCleared() {
-        disposables.clear()
-    }
 
+    override fun onClick(clickedView: View?) {
+    }
 }

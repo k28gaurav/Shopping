@@ -13,7 +13,7 @@ data class Item(
     @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
     @ColumnInfo(name= PRODUCT_ID)
-    val productId:Int,
+    val id:Int,
 
     @SerializedName("name")
     @ColumnInfo(name = PRODUCT_NAME)

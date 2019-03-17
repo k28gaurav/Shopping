@@ -1,6 +1,5 @@
 package com.ecom.shopping.app.base
 
-import android.view.View
 import dagger.android.support.DaggerAppCompatActivity
 
 /**

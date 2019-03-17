@@ -12,10 +12,24 @@ abstract class DaggerBaseFragment<VM: BaseViewModel>: DaggerFragment(),  View.On
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
         observeViewModel()
+
     }
 
     protected open fun observeViewModel() {
+
+    }
+
+    protected open fun initViews() {
+        initEventHandlers()
+    }
+
+    override fun onClick(view: View?) {
+
+    }
+
+    protected open fun initEventHandlers() {
 
     }
 }
