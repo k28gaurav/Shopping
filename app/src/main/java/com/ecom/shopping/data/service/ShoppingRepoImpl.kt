@@ -7,6 +7,7 @@ import com.ecom.shopping.app.rx.SchedulersFacade
 import com.ecom.shopping.data.db.ShoppingDatabase
 import com.ecom.shopping.data.db.entities.CartItem
 import com.ecom.shopping.data.db.entities.Item
+import com.ecom.shopping.data.models.Products
 import com.ecom.shopping.domain.repository.ShoppingRepo
 import io.reactivex.Single
 import javax.inject.Inject
@@ -24,7 +25,7 @@ class ShoppingRepoImpl @Inject constructor(private val cartDatabase: ShoppingDat
         return LivePagedListBuilder(cartDatabase.itemDao().getItems(), 20).build()
     }
 
-    override fun fetchItems(): Single<List<Item>> {
+    override fun fetchItems(): Single<Products> {
         return cartApiService.getAllItems()
     }
 

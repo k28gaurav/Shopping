@@ -24,8 +24,8 @@ class ShoppingCartViewModel @Inject constructor(schedulersFacade: SchedulersFaca
     fun fetchItemList() {
         val fetchItemListDisposal = fetchItemListUseCase.execute()
             .subscribeOn(schedulers.io())
-            .map { items ->
-                saveItemsUseCase.execute(items)
+            .map { response ->
+                saveItemsUseCase.execute(response.products)
             }
             .observeOn(schedulers.ui())
             .subscribe({
