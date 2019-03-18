@@ -29,17 +29,16 @@ android {
 }
 
 dependencies {
-    //1
+
     ext.jarFileDependencies = {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
     }
 
-    //2
+
     ext.kotlinDependencies = {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     }
 
-    //3
     ext.jetpackDependecies = {
         implementation "com.android.support:multidex:$config.multiDex"
         implementation "android.arch.lifecycle:extensions:$config.lifecycle"
@@ -55,7 +54,7 @@ dependencies {
         implementation "android.arch.paging:rxjava2:$config.pagingRxJava2"
     }
 
-    //4
+
     ext.networkDependencies = {
         implementation "com.squareup.retrofit2:retrofit:$config.retrofit"
         implementation "com.squareup.okhttp3:okhttp:$config.okHttp"
@@ -67,7 +66,6 @@ dependencies {
         kapt "com.github.bumptech.glide:compiler:$config.glide"
     }
 
-    //5
     ext.daggerDependencies = {
         implementation "com.google.dagger:dagger-android:$config.dagger"
         implementation "com.google.dagger:dagger-android-support:$config.dagger"
@@ -75,20 +73,17 @@ dependencies {
         kapt "com.google.dagger:dagger-android-processor:$config.dagger"
     }
 
-    //6
     ext.rxDependencies = {
         implementation "io.reactivex.rxjava2:rxkotlin:$config.rxKotlin"
         implementation "io.reactivex.rxjava2:rxandroid:$config.rxAndroid"
         implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0'
     }
 
-    //7
     ext.others = {
         implementation "com.jakewharton.timber:timber:$config.timber"
         implementation 'com.nex3z:flow-layout:1.2.4'
     }
 
-    //8
     ext.testDependencies = {
         def lifecycle_version = "1.1.1"
         testImplementation 'junit:junit:4.12'

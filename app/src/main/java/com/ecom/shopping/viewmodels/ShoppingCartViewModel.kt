@@ -1,6 +1,7 @@
 package com.ecom.shopping.viewmodels
 
 import com.ecom.shopping.app.base.BaseViewModel
+import com.ecom.shopping.app.rx.SchedulerProvider
 import com.ecom.shopping.app.rx.SchedulersFacade
 import com.ecom.shopping.data.db.entities.CartItem
 import com.ecom.shopping.data.models.DiscountItem
@@ -8,7 +9,7 @@ import com.ecom.shopping.domain.interactor.*
 import timber.log.Timber
 import javax.inject.Inject
 
-class ShoppingCartViewModel @Inject constructor(schedulersFacade: SchedulersFacade,
+class ShoppingCartViewModel @Inject constructor(schedulersFacade: SchedulerProvider,
                                                 getItemsUseCase: GetItemsUseCase,
                                                 private val fetchItemListUseCase: FetchItemListUseCase,
                                                 private val saveItemsUseCase: SaveItemsUseCase,
